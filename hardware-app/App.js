@@ -1,17 +1,25 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import { HomeScreen, LoginScreen, SignupScreen } from './src/screens/ExportIndex';
+import { StyleSheet, View } from 'react-native';
+import { PaperProvider, Text } from 'react-native-paper';
+
+import { HomeScreen,
+  LoginScreen,
+  SignupScreen 
+} from './src/screens/ExportIndex';
+
 
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <HomeScreen/>
-      <LoginScreen/>
-      <SignupScreen/>
-      <StatusBar style="auto" />
-    </View>
+    <PaperProvider>
+      <View style={styles.container}>
+        <Text variant="titleLarge">Open up App.js to start working on your app!</Text>
+        <HomeScreen/>
+        <LoginScreen/>
+        <SignupScreen/>
+        <StatusBar style="auto" />
+      </View>
+    </PaperProvider>
   );
 }
 
